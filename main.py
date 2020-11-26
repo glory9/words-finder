@@ -29,7 +29,7 @@ def findValidWords(grid, rows, cols):
                 # compass (compass automatically updates to the next direction)
                 iChange, jChange = compass.get_curr_index_changes()
 
-                # compute character sequence
+                # compute character sequence in current direction
                 char_sequence = []
                 while isWithinRange(x, y, rows, cols):
                     char_sequence.append(grid[x][y])
