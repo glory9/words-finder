@@ -17,7 +17,7 @@ class Matcher:
         # for every processed sequence for any given character, we need
         # self.words to hold a complete list of all potential matching words.
         # but since self.words gets altered during each sequence, we can use a 
-        # cache to quickly obtain the list of matching words
+        # cache to quickly obtain the original list of matching words
         self.cache = set(self.words)
 
     def process_sequence(self, letters):
@@ -28,7 +28,7 @@ class Matcher:
             match_char = letters[curr_idx]
             # we need to delete some items during the iteration, so we keep
             # a copy of self.words instead, then delete the respective items
-            # from it and finally update self.words after the iteration
+            # from the copy and finally update self.words after the iteration
             matching_words = set(self.words)
 
             for word in self.words:
@@ -40,7 +40,7 @@ class Matcher:
 
             self.words = matching_words
             curr_idx += 1
-
+        # update self.words to its original state after processing each sequence
         self.words = set(self.cache)
 
         return correct_matches
