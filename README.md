@@ -1,5 +1,5 @@
 # Words Finder
-On board, find words that can be formed by a sequence of adjacent (top, bottom, left, right, diagonal) letters.
+On a board, find words that can be formed by a sequence of adjacent (top, bottom, left, right, diagonal) letters.
 Words must be 3 or more letters.
 You may move to any of 8 adjacent letters, however, a word should not have multiple instances of the same cell.
 
