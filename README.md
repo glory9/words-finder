@@ -29,3 +29,9 @@ Defines a Matcher class that finds matching words given a sequence of characters
 - if the current letter in the word does not match the current letter in the search sequence, that word is removed from the set.
 - if the current letter is a match and i is at the last index of the word, that word is also removed from the set but added to a result list.
 - the above steps are repeated till we reach the end of the sequence.
+
+## How To Use
+- Clone this repository
+- Edit input in `input.txt` (optional)
+- Run `main.py`
+- View results in `output.py`
