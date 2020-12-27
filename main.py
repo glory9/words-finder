@@ -7,6 +7,7 @@ def isWithinRange(x, y, rows, cols):
         return False
     return True
 
+
 def findValidWords(grid, rows, cols):
     valid_words = []
 
@@ -37,6 +38,7 @@ def findValidWords(grid, rows, cols):
 
     return valid_words
 
+
 with open("input.txt") as reader:
     rows, cols = list(map(int, reader.readline().strip().split(" ")))
     if not rows or not cols:
@@ -59,6 +61,7 @@ with open("input.txt") as reader:
 with open("output.txt", 'w') as writer:
     for word in result:
         writer.write(word + "\n")
-    
+
+        
 print("Code Executed Successfully.\nCheck results in output.py")
 print("You can modify the input in input.py")
