@@ -6,10 +6,6 @@ def isWithinRange(x, y, rows, cols):
     if (x < 0 or y < 0 or x >= rows or y >= cols):
         return False
     return True
-    
-# to filter out single characters obtained from the dictionry
-def invalidSingleCharater(string):
-    return len(string) == 1 and string[0] not in ['a','i']
 
 def findValidWords(grid, rows, cols):
     valid_words = []
@@ -51,13 +47,12 @@ with open("input.txt") as reader:
         line = reader.readline().strip()
         row = [C.lower() for C in line.split(" ")]
         grid.append(row)
-
+     
+    # filter out duplicates with a set
     valid_words = set(findValidWords(grid, rows, cols))
-
-    # clean up results to remove single characters pulled from dictionary except
-    # 'a' and 'i'.
-    result = [W for W in valid_words if not invalidSingleCharater(W)]
-    # sort words by length
+    result = list(valid_words)
+    
+    # sort words by increasing length
     result.sort(key= lambda w: len(w))
 
 
